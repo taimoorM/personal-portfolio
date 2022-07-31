@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  color: $alice-blue;
+  position: relative;
+}
+
+.main::before {
+  content: "";
+  background-image: url("../assets/bg.png");
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+.mainContent {
+  width: 80%;
+  justify-self: flex-end;
+  background-color: #151329;
+}
