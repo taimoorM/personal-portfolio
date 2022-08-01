@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Imprima&family=Source+Sans+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Imprima&family=Source+Sans+Pro:wght@300;400;700&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -231,10 +231,24 @@ h4 {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Imprima", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 .main {
@@ -249,35 +263,53 @@ body {
   position: relative;
 }
 
-.main::before {
+.main::after {
   content: "";
   background-image: url("../assets/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   opacity: 0.1;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: 10;
 }
 
 .mainContent {
-  width: 80%;
+  width: 100%;
+  margin-left: 100px;
   justify-self: flex-end;
   background-color: #151329;
 }
 
 .sidebar {
-  width: 20%;
+  width: 100px;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 70px 0 50px 0;
   background-color: #0e1326;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 20;
 }
 
 .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,9 +321,55 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #f71735;
-  background-color: #dbe4ee;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto;
+  background-color: transparent;
+  margin-top: 30px;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+.nav ul {
+  width: 100%;
+}
+.nav li:not(:last-child) {
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.nav a {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 5px 0;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #f71735;
+  width: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.nav a:hover {
+  color: #f71735;
+  background-color: rgba(255, 255, 255, 0.01);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+.nav a:hover::after {
+  width: 5px;
 }

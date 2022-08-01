@@ -6,20 +6,23 @@
   position: relative;
 }
 
-.main::before {
+.main::after {
   content: "";
   background-image: url("../assets/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   opacity: 0.1;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: 10;
+  //   z-index: 10;
 }
 
 .mainContent {
-  width: 80%;
+  width: 100%;
+  margin-left: 100px;
   justify-self: flex-end;
   background-color: #151329;
 }
