@@ -5,29 +5,33 @@
   color: $alice-blue;
   position: relative;
 
-  background: linear-gradient(-45deg, #151329, #241d3f, #32214e, #441f55);
+  background: #151329;
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
 
 @keyframes gradient {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
 }
 
 .main::after {
   content: "";
   background-image: url("../assets/bg.png");
-  background-size: cover;
+  background-size: 1000% 1000%;
+  animation: gradient 20s ease infinite;
+
   background-repeat: no-repeat;
-  opacity: 0.2;
+  opacity: 0.1;
   top: 0;
   left: 0;
   bottom: 0;
@@ -45,9 +49,11 @@
 
 .wrapper {
   padding: 35px 0 30px 40px;
+  height: 100%;
 }
 
 .sectionHeading {
+  position: fixed;
   display: inline-block;
   padding: 5px 0;
   border-bottom: 2px solid $imperial-red;
@@ -56,8 +62,15 @@
   }
 }
 
+section {
+  height: 100%;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+}
 .aboutInner {
-  margin-top: 100px;
   h1 {
     font-size: 3rem;
     margin-bottom: 5px;
