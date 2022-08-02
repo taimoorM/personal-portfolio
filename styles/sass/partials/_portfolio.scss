@@ -4,6 +4,22 @@
   height: 100vh;
   color: $alice-blue;
   position: relative;
+
+  background: linear-gradient(-45deg, #151329, #241d3f, #32214e, #441f55);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .main::after {
@@ -11,7 +27,7 @@
   background-image: url("../assets/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.1;
+  opacity: 0.2;
   top: 0;
   left: 0;
   bottom: 0;
@@ -24,5 +40,45 @@
   width: 100%;
   margin-left: 100px;
   justify-self: flex-end;
-  background-color: #151329;
+  //   background-color: #151329;
+}
+
+.wrapper {
+  padding: 35px 0 30px 40px;
+}
+
+.sectionHeading {
+  display: inline-block;
+  padding: 5px 0;
+  border-bottom: 2px solid $imperial-red;
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+.aboutInner {
+  margin-top: 100px;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+
+    span:first-child {
+      font-weight: 500;
+    }
+    span:last-child {
+      color: $imperial-red;
+    }
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 1.7rem;
+    color: $imperial-red;
+  }
+
+  p {
+    color: #b7b6ba;
+    font-size: 1.2rem;
+  }
 }

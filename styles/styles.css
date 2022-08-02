@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Imprima&family=Source+Sans+Pro:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Imprima&family=Source+Sans+Pro:wght@300;400;500;700&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -236,6 +236,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+  color: #fff;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -261,14 +266,41 @@ li {
   height: 100vh;
   color: #dbe4ee;
   position: relative;
+  background: linear-gradient(-45deg, #151329, #241d3f, #32214e, #441f55);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
 }
 
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .main::after {
   content: "";
   background-image: url("../assets/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.1;
+  opacity: 0.2;
   top: 0;
   left: 0;
   bottom: 0;
@@ -280,7 +312,43 @@ li {
   width: 100%;
   margin-left: 100px;
   justify-self: flex-end;
-  background-color: #151329;
+}
+
+.wrapper {
+  padding: 35px 0 30px 40px;
+}
+
+.sectionHeading {
+  display: inline-block;
+  padding: 5px 0;
+  border-bottom: 2px solid #f71735;
+}
+.sectionHeading p {
+  font-size: 1.3rem;
+}
+
+.aboutInner {
+  margin-top: 100px;
+}
+.aboutInner h1 {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+.aboutInner h1 span:first-child {
+  font-weight: 500;
+}
+.aboutInner h1 span:last-child {
+  color: #f71735;
+}
+.aboutInner h2 {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: #f71735;
+}
+.aboutInner p {
+  color: #b7b6ba;
+  font-size: 1.2rem;
 }
 
 .sidebar {
@@ -289,7 +357,7 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #0e1326;
+  background-color: rgba(0, 0, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,8 +372,45 @@ li {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 20;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.sidebar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 1px;
+  top: -100%;
+  right: 0;
+  background-color: #4158d0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4158d0), color-stop(46%, #c850c0), to(#ffcc70));
+  background: linear-gradient(to bottom, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  -webkit-animation: drop 10s 0s infinite;
+          animation: drop 10s 0s infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+          animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
 }
 
+@-webkit-keyframes drop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 110%;
+  }
+}
 .logo {
   position: absolute;
   top: 0;
@@ -321,7 +426,6 @@ li {
       -ms-flex-align: center;
           align-items: center;
   color: #f71735;
-  background-color: transparent;
   margin-top: 30px;
 }
 
@@ -349,8 +453,8 @@ li {
   display: inline-block;
   width: 100%;
   text-align: center;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   padding: 5px 0;
 }
 .nav a::after {
@@ -359,13 +463,13 @@ li {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #f71735;
+  background-color: #f3a712;
   width: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .nav a:hover {
-  color: #f71735;
+  color: #f3a712;
   background-color: rgba(255, 255, 255, 0.01);
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
