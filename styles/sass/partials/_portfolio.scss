@@ -1,6 +1,5 @@
 .bg {
   background: #151329;
-
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
@@ -55,11 +54,13 @@
 }
 
 .wrapper {
-  padding: 35px 0 30px 40px;
-  height: 100%;
+  margin: 0 auto 0 50px;
+  max-width: 1200px;
+  width: 90%;
 }
 
 .sectionHeading {
+  margin-top: 30px;
   position: fixed;
   display: inline-block;
   padding: 5px 0;
@@ -70,13 +71,11 @@
 }
 
 section {
-  height: 100%;
-}
-
-.about {
+  height: 100vh;
   display: flex;
   align-items: center;
 }
+
 .aboutInner {
   h1 {
     font-size: 3rem;
@@ -100,5 +99,26 @@ section {
   p {
     color: #b7b6ba;
     font-size: 1.2rem;
+  }
+}
+
+.skills {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    position: relative;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #2b1a48, #41143d);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   }
 }

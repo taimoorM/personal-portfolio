@@ -324,11 +324,13 @@ li {
 }
 
 .wrapper {
-  padding: 35px 0 30px 40px;
-  height: 100%;
+  margin: 0 auto 0 50px;
+  max-width: 1200px;
+  width: 90%;
 }
 
 .sectionHeading {
+  margin-top: 30px;
   position: fixed;
   display: inline-block;
   padding: 5px 0;
@@ -339,10 +341,7 @@ li {
 }
 
 section {
-  height: 100%;
-}
-
-.about {
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -370,6 +369,31 @@ section {
 .aboutInner p {
   color: #b7b6ba;
   font-size: 1.2rem;
+}
+
+.skills ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.skills li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+  position: relative;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #2b1a48, #41143d);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .sidebar {
