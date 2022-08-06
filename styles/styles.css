@@ -396,6 +396,41 @@ section {
           box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
+.projects .projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.projects .projectInfo,
+.projects .projectIcons,
+.projects .projectNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.projects .projectDesc {
+  padding: 20px;
+  background-color: #1e1a34;
+}
+.projects .projectDesc > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+.projects .projectDesc P {
+  color: #b7b6ba;
+}
+.projects .projectInfo {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #f71735;
+}
+.projects .projectInfo a {
+  color: #f3a712;
+}
+.projects .projectInfo a:first-child {
+  margin-right: 10px;
+}
 .sidebar {
   width: 100px;
   height: 100vh;
