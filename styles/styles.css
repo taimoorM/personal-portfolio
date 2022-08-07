@@ -396,11 +396,15 @@ section {
           box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.projects .projectsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.projects {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.projects .projectImage img {
   width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .projects .projectInfo,
 .projects .projectIcons,
@@ -431,6 +435,14 @@ section {
 .projects .projectInfo a:first-child {
   margin-right: 10px;
 }
+.projects .main-carousel {
+  width: 80%;
+}
+.projects .carousel-cell {
+  margin-right: 30px;
+  border-radius: 5px;
+}
+
 .sidebar {
   width: 100px;
   height: 100vh;

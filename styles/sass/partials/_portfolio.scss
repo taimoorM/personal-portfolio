@@ -124,11 +124,14 @@ section {
 }
 
 .projects {
-  .projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
+  justify-content: center;
+
+  .projectImage {
+    img {
+      width: 100%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
   }
 
   .projectInfo,
@@ -163,5 +166,13 @@ section {
   }
 
   .projectNav {
+  }
+
+  .main-carousel {
+    width: 80%;
+  }
+  .carousel-cell {
+    margin-right: 30px;
+    border-radius: 5px;
   }
 }

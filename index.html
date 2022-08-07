@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
 
     <link rel="stylesheet" href="./styles/styles.css" />
     <title>Taimoor M</title>
@@ -66,8 +70,11 @@
             </ul>
           </section>
           <section class="projects" id="projects">
-            <ul class="projectsGrid">
-              <li>
+            <ul
+              class="main-carousel"
+              data-flickity='{  "freeScroll": true, "adaptiveHeight": true}'
+            >
+              <li class="carousel-cell">
                 <div class="project">
                   <div class="projectImage">
                     <img
@@ -96,7 +103,7 @@
                   </div>
                 </div>
               </li>
-              <li>
+              <li class="carousel-cell">
                 <div class="project">
                   <div class="projectImage">
                     <img
@@ -126,7 +133,7 @@
                   </div>
                 </div>
               </li>
-              <li>
+              <li class="carousel-cell">
                 <div class="project">
                   <div class="projectImage">
                     <img
@@ -155,7 +162,7 @@
                   </div>
                 </div>
               </li>
-              <li>
+              <li class="carousel-cell">
                 <div class="project">
                   <div class="projectImage">
                     <img
@@ -189,5 +196,7 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
