@@ -72,7 +72,7 @@
           <section class="projects" id="projects">
             <ul
               class="main-carousel"
-              data-flickity='{  "freeScroll": true, "adaptiveHeight": true}'
+              data-flickity='{  "freeScroll": true,  "adaptiveHeight": true, "cellAlign:": "left", "wrapAround": true, "prevNextButtons": false}'
             >
               <li class="carousel-cell">
                 <div class="project">
@@ -192,6 +192,27 @@
                 </div>
               </li>
             </ul>
+          </section>
+          <section class="contact">
+            <form action="" class="contactForm">
+              <fieldset>
+                <legend>Get in touch</legend>
+                <label for="name" class="sr-only">Your name</label>
+                <input type="text" id="name" />
+                <label for="email" class="sr-only">Your email</label>
+                <input type="email" id="name" />
+              </fieldset>
+              <fieldset>
+                <legend>Your message</legend>
+                <label for="message" class="sr-only">Your message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="How can I help?"
+                ></textarea>
+              </fieldset>
+              <button class="button">Submit</button>
+            </form>
           </section>
         </div>
       </div>
