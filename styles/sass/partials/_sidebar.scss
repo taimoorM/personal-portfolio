@@ -32,6 +32,34 @@
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
   }
+
+  @media (max-width: 500px) {
+    width: 100vw;
+    height: 100px;
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(transparent, 0.4);
+
+    .nav ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+
+      li {
+        margin: 0;
+      }
+    }
+
+    .logo {
+      display: none;
+    }
+  }
 }
 
 @keyframes drop {
@@ -96,6 +124,10 @@
 
       &::after {
         width: 5px;
+
+        @media (max-width: 500px) {
+          width: 0;
+        }
       }
     }
 

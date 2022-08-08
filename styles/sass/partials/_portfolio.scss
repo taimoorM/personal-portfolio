@@ -27,7 +27,6 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  height: 100vh;
   color: $alice-blue;
   width: 100%;
 }
@@ -51,12 +50,20 @@
   margin-left: 100px;
   justify-self: flex-end;
   //   background-color: #151329;
+
+  @media (max-width: 500px) {
+    margin-left: 0;
+  }
 }
 
 .wrapper {
-  margin: 0 auto 0 50px;
+  margin: 0 50px;
   max-width: 1200px;
   width: 90%;
+
+  @media (max-width: 760px) {
+    margin: 0 auto;
+  }
 }
 
 .sectionHeading {
@@ -73,6 +80,7 @@
 
 section {
   height: 100vh;
+  min-height: 900px;
   display: flex;
   align-items: center;
 }
@@ -125,6 +133,10 @@ section {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
+
+    @media (max-width: 760px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   li {
@@ -137,6 +149,10 @@ section {
     border-image-slice: 1;
     border-image-source: linear-gradient(to left, #2b1a48, #41143d);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    @media (max-width: 1000px) {
+      height: 100px;
+    }
   }
 
   i {
@@ -195,7 +211,7 @@ section {
     width: 100%;
   }
   .carousel-cell {
-    width: 400px;
+    max-width: 400px;
     margin-right: 30px;
     border-radius: 5px;
   }
