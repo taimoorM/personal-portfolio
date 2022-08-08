@@ -70,12 +70,14 @@
   margin-top: 30px;
   position: fixed;
   display: inline-block;
-  padding: 5px 0;
+  padding: 5px 20px;
   border-bottom: 2px solid $imperial-red;
+  background-color: rgba(transparent, 0.2);
   span {
     font-size: 1.8rem;
     font-family: $headingFont;
   }
+  z-index: 10;
 }
 
 section {
@@ -119,6 +121,7 @@ section {
 
   .aboutMe {
     margin-bottom: 50px;
+    font-weight: 300;
 
     p:not(:last-child) {
       margin-bottom: 20px;
@@ -126,6 +129,7 @@ section {
 
     span {
       color: $imperial-red;
+      font-weight: 400;
     }
   }
   ul {
