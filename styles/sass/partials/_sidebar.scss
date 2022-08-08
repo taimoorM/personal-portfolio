@@ -69,6 +69,10 @@
     .logo {
       display: none;
     }
+
+    .socialNav {
+      display: none;
+    }
   }
 }
 
@@ -125,7 +129,7 @@
     width: 100%;
     text-align: center;
     transition: all 0.5s;
-    padding: 5px 0;
+    padding: 10px 0;
     &::after {
       content: "";
       position: absolute;
@@ -154,6 +158,31 @@
     i {
       font-size: 1.2rem;
       margin-bottom: 5px;
+    }
+  }
+}
+
+.socialNav {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  ul {
+    display: flex;
+  }
+
+  li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  i {
+    color: #4d4c5e;
+    transition: 0.3s all;
+
+    &:hover {
+      color: $marigold;
     }
   }
 }

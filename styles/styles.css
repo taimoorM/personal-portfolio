@@ -417,6 +417,24 @@ section {
   font-size: 1.2rem;
   line-height: 2;
 }
+.homeInner ul {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.homeInner ul li {
+  margin-right: 20px;
+}
+.homeInner ul i {
+  font-size: 2rem;
+  color: #4d4c5e;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.homeInner ul i:hover {
+  color: #f71735;
+}
 
 .skills {
   display: -webkit-box;
@@ -700,6 +718,9 @@ section {
   .sidebar .logo {
     display: none;
   }
+  .sidebar .socialNav {
+    display: none;
+  }
 }
 
 @-webkit-keyframes drop {
@@ -785,7 +806,7 @@ section {
   text-align: center;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 .nav a::after {
   content: "";
@@ -817,6 +838,35 @@ section {
   margin-bottom: 5px;
 }
 
+.socialNav {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+.socialNav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.socialNav li:not(:last-child) {
+  margin-right: 10px;
+}
+.socialNav i {
+  color: #4d4c5e;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.socialNav i:hover {
+  color: #f3a712;
+}
+
 .contactForm {
   width: 100%;
   max-width: 560px;
@@ -836,8 +886,12 @@ section {
 .contactForm legend {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   font-weight: 300;
+}
+.contactForm .message {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 .contactForm input,
 .contactForm textarea {
