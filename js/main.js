@@ -11,7 +11,7 @@ const headingChanger = (el) => {
         sectionHeading.style.animation = "none";
       }
     },
-    { threshold: [0.4] }
+    { threshold: [0.7] }
   );
 
   observer.observe(el);
