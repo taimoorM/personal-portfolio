@@ -405,6 +405,27 @@ section {
   line-height: 2;
 }
 
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.skills .aboutMe {
+  margin-bottom: 50px;
+}
+.skills .aboutMe p:not(:last-child) {
+  margin-bottom: 20px;
+}
+.skills .aboutMe span {
+  color: #f71735;
+}
 .skills ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

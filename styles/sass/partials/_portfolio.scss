@@ -105,6 +105,21 @@ section {
 }
 
 .skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .aboutMe {
+    margin-bottom: 50px;
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    span {
+      color: $imperial-red;
+    }
+  }
   ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
