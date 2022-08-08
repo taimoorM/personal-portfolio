@@ -369,7 +369,8 @@ li {
   border-bottom: 2px solid #f71735;
 }
 .sectionHeading span {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 section {
@@ -382,25 +383,26 @@ section {
           align-items: center;
 }
 
-.aboutInner h1 {
+.homeInner h1 {
   font-size: 3rem;
   margin-bottom: 5px;
 }
-.aboutInner h1 span:first-child {
+.homeInner h1 span:first-child {
   font-weight: 500;
 }
-.aboutInner h1 span:last-child {
+.homeInner h1 span:last-child {
   color: #f71735;
 }
-.aboutInner h2 {
+.homeInner h2 {
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 1.7rem;
   color: #f71735;
 }
-.aboutInner p {
+.homeInner p {
   color: #b7b6ba;
   font-size: 1.2rem;
+  line-height: 2;
 }
 
 .skills ul {
@@ -502,6 +504,63 @@ section {
   }
   100% {
     opacity: 1;
+  }
+}
+.lds-ring {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 .sidebar {

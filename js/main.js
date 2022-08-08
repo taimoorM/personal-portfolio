@@ -6,7 +6,7 @@ const headingChanger = (el) => {
       if (entries[0].isIntersecting === true) {
         sectionHeading.textContent = el.dataset.heading;
         sectionHeading.style.animationName = "fadeIn";
-        sectionHeading.style.animationDuration = "2s";
+        sectionHeading.style.animationDuration = "3s";
       } else {
         sectionHeading.style.animation = "none";
       }

@@ -56,13 +56,13 @@
           <div class="sectionHeading">
             <span id="sectionText"></span>
           </div>
-          <section class="about" id="home" data-heading="Home">
-            <div class="aboutInner">
+          <section class="home" id="home" data-heading="Hello">
+            <div class="homeInner">
               <h1>Taimoor <span>Mohammad</span><span>.</span></h1>
               <h2>Front-End Developer</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
-                a.
+                📝 Creator of solutions. <br />⌨ Builder of web applications.<br />
+                🎧 Lover of music.
               </p>
             </div>
           </section>
@@ -234,13 +234,19 @@
             </ul>
           </section>
           <section class="contact" id="contact" data-heading="Contact Me">
-            <form action="" class="contactForm">
+            <form class="contactForm" id="contactForm">
+              <input type="hidden" name="contact_number" />
               <fieldset>
                 <legend>Get in touch</legend>
                 <label for="name" class="sr-only">Your name</label>
-                <input type="text" id="name" placeholder="Your name" />
+                <input type="text" id="name" placeholder="Your name" required />
                 <label for="email" class="sr-only">Your email</label>
-                <input type="email" id="name" placeholder="Your email" />
+                <input
+                  type="email"
+                  id="name"
+                  placeholder="Your email"
+                  required
+                />
               </fieldset>
               <fieldset>
                 <legend>Your message</legend>
@@ -249,15 +255,67 @@
                   name="message"
                   id="message"
                   placeholder="How can I help?"
+                  required
                 ></textarea>
               </fieldset>
-              <button class="button">Submit</button>
+              <button class="button" id="formButton">
+                <div class="lds-ring">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+                <span>Submit</span>
+              </button>
             </form>
           </section>
         </div>
       </div>
     </div>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("pL8SFMP2vhPfXz36W");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.querySelector(".lds-ring").style.display = "inline-block";
+            document.querySelector("#formButton span").textContent = "";
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm("service_y66l0um", "template_y47te0k", this).then(
+              function () {
+                document.querySelector(".lds-ring").style.display = "none";
+                document.querySelector("#formButton span").textContent = "✔️";
+                document
+                  .querySelector("#formButton")
+                  .setAttribute("disabled", true);
+                document
+                  .querySelectorAll("#contactForm input")
+                  .forEach((input) => {
+                    input.setAttribute("disabled", true);
+                  });
+                document
+                  .querySelector("#contactForm textarea")
+                  .setAttribute("disabled", true);
+              },
+              function (error) {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
     <script src="/js/main.js"></script>
   </body>
 </html>
