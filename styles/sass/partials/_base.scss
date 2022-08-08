@@ -11,3 +11,32 @@ ul {
 li {
   list-style: none;
 }
+
+.button {
+  position: relative;
+  background-color: transparent;
+  color: $alice-blue;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 15px 40px;
+  border: 1px solid #4d4c5e;
+  cursor: pointer;
+  font-family: $bodyFont;
+  letter-spacing: 1px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $imperial-red;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}

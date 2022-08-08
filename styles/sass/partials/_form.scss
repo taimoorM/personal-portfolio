@@ -1,0 +1,45 @@
+.contactForm {
+  width: 100%;
+  max-width: 560px;
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  legend {
+    font-family: $bodyFont;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  input,
+  textarea {
+    padding: 20px;
+    width: 100%;
+    color: $alice-blue;
+    font-family: $bodyFont;
+    background-color: rgba($color: transparent, $alpha: 0.2);
+    border: 1px solid #4d4c5e;
+
+    &::placeholder {
+      color: #4d4c5e;
+      font-size: 1.2rem;
+      font-weight: 200;
+      font-family: $bodyFont;
+    }
+
+    &:focus {
+      outline: 1px solid $imperial-red;
+    }
+  }
+
+  textarea {
+    height: 200px;
+  }
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Imprima&family=Source+Sans+Pro:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Montserrat:wght@200;400&family=Source+Sans+Pro:wght@300;400;700&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -244,7 +244,7 @@ p {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Imprima", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 ul {
@@ -254,6 +254,34 @@ ul {
 
 li {
   list-style: none;
+}
+
+.button {
+  position: relative;
+  background-color: transparent;
+  color: #dbe4ee;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 15px 40px;
+  border: 1px solid #4d4c5e;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f71735;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.button:hover::before {
+  width: 100%;
 }
 
 .bg {
@@ -443,6 +471,12 @@ section {
   border-radius: 5px;
 }
 
+.contact {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .sidebar {
   width: 100px;
   height: 100vh;
@@ -568,4 +602,74 @@ section {
 }
 .nav a:hover::after {
   width: 5px;
+}
+
+.contactForm {
+  width: 100%;
+  max-width: 560px;
+}
+.contactForm fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+.contactForm legend {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.contactForm input,
+.contactForm textarea {
+  padding: 20px;
+  width: 100%;
+  color: #dbe4ee;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid #4d4c5e;
+}
+.contactForm input::-webkit-input-placeholder, .contactForm textarea::-webkit-input-placeholder {
+  color: #4d4c5e;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+}
+.contactForm input::-moz-placeholder, .contactForm textarea::-moz-placeholder {
+  color: #4d4c5e;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+}
+.contactForm input:-ms-input-placeholder, .contactForm textarea:-ms-input-placeholder {
+  color: #4d4c5e;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+}
+.contactForm input::-ms-input-placeholder, .contactForm textarea::-ms-input-placeholder {
+  color: #4d4c5e;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+}
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: #4d4c5e;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+}
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: 1px solid #f71735;
+}
+.contactForm textarea {
+  height: 200px;
 }
