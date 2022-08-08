@@ -1,6 +1,7 @@
 .sidebar {
   width: 100px;
   height: 100vh;
+  min-height: 600px;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,6 +37,7 @@
   @media (max-width: 500px) {
     width: 100vw;
     height: 100px;
+    min-height: auto;
     position: fixed;
     top: auto;
     left: 0;
