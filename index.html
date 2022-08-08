@@ -10,6 +10,13 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
       href="https://unpkg.com/flickity@2/dist/flickity.min.css"
     />
 
@@ -25,19 +32,31 @@
         </div>
         <nav class="nav">
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#home"><i class="fa-solid fa-house-chimney"></i>Home</a>
+            </li>
+            <li>
+              <a href="#skills"><i class="fa-regular fa-user"></i>About Me</a>
+            </li>
+            <li>
+              <a href="#projects"
+                ><i class="fa-solid fa-laptop-code"></i>Projects</a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fa-regular fa-paper-plane"></i>Contact</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
       <div class="mainContent">
         <div class="wrapper">
           <div class="sectionHeading">
-            <p>About Me</p>
+            <span id="sectionText"></span>
           </div>
-          <section class="about" id="about">
+          <section class="about" id="home" data-heading="Home">
             <div class="aboutInner">
               <h1>Taimoor <span>Mohammad</span><span>.</span></h1>
               <h2>Front-End Developer</h2>
@@ -47,7 +66,7 @@
               </p>
             </div>
           </section>
-          <section class="skills" id="skills">
+          <section class="skills" id="skills" data-heading="About Me">
             <ul>
               <li>
                 <div class="skill">
@@ -91,10 +110,10 @@
               </li>
             </ul>
           </section>
-          <section class="projects" id="projects">
+          <section class="projects" id="projects" data-heading="My Projects">
             <ul
               class="main-carousel"
-              data-flickity='{  "freeScroll": true,  "adaptiveHeight": true, "cellAlign:": "left", "wrapAround": true, "prevNextButtons": false}'
+              data-flickity='{  "freeScroll": true, "cellAlign:": "left", "wrapAround": true, "prevNextButtons": false}'
             >
               <li class="carousel-cell">
                 <div class="project">
@@ -214,7 +233,7 @@
               </li>
             </ul>
           </section>
-          <section class="contact" id="contact">
+          <section class="contact" id="contact" data-heading="Contact Me">
             <form action="" class="contactForm">
               <fieldset>
                 <legend>Get in touch</legend>

@@ -24,9 +24,9 @@
     background-color: #4158d0;
     background: linear-gradient(
       to bottom,
-      #4158d0 0%,
-      #c850c0 46%,
-      #ffcc70 100%
+      transparent 0%,
+      $imperial-red 46%,
+      $marigold 100%
     );
     animation: drop 10s 0s infinite;
     animation-fill-mode: forwards;
@@ -68,11 +68,12 @@
     cursor: pointer;
   }
   a {
+    display: flex;
+    flex-direction: column;
     font-family: $headingFont;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 300;
     position: relative;
-    display: inline-block;
     width: 100%;
     text-align: center;
     transition: all 0.5s;
@@ -96,6 +97,11 @@
       &::after {
         width: 5px;
       }
+    }
+
+    i {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
     }
   }
 }
