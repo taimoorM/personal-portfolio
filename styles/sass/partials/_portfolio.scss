@@ -92,7 +92,7 @@ section {
     font-size: 3rem;
     margin-bottom: 5px;
 
-    span:first-child {
+    & > span {
       font-weight: 500;
     }
     span:last-child {
@@ -238,6 +238,10 @@ section {
     margin-right: 30px;
     border-radius: 5px;
   }
+}
+
+.flickity-page-dots .dot {
+  background: rgb(121, 121, 121);
 }
 
 .contact {

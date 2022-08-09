@@ -288,6 +288,11 @@ li {
 .button:hover::before {
   width: 100%;
 }
+@media (max-width: 500px) {
+  .button {
+    width: 100%;
+  }
+}
 
 .bg {
   background: #151329;
@@ -400,7 +405,7 @@ section {
   font-size: 3rem;
   margin-bottom: 5px;
 }
-.homeInner h1 span:first-child {
+.homeInner h1 > span {
   font-weight: 500;
 }
 .homeInner h1 span:last-child {
@@ -545,6 +550,10 @@ section {
   max-width: 400px;
   margin-right: 30px;
   border-radius: 5px;
+}
+
+.flickity-page-dots .dot {
+  background: rgb(121, 121, 121);
 }
 
 .contact {
@@ -905,32 +914,32 @@ section {
   border: 1px solid #4d4c5e;
 }
 .contactForm input::-webkit-input-placeholder, .contactForm textarea::-webkit-input-placeholder {
-  color: #4d4c5e;
+  color: #9694b1;
   font-size: 1.2rem;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
 }
 .contactForm input::-moz-placeholder, .contactForm textarea::-moz-placeholder {
-  color: #4d4c5e;
+  color: #9694b1;
   font-size: 1.2rem;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
 }
 .contactForm input:-ms-input-placeholder, .contactForm textarea:-ms-input-placeholder {
-  color: #4d4c5e;
+  color: #9694b1;
   font-size: 1.2rem;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
 }
 .contactForm input::-ms-input-placeholder, .contactForm textarea::-ms-input-placeholder {
-  color: #4d4c5e;
+  color: #9694b1;
   font-size: 1.2rem;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
 }
 .contactForm input::placeholder,
 .contactForm textarea::placeholder {
-  color: #4d4c5e;
+  color: #9694b1;
   font-size: 1.2rem;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
