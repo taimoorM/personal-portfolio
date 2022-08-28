@@ -17,7 +17,11 @@ const headingChanger = (el) => {
   observer.observe(el);
 };
 
-headingChanger(document.querySelector("#home"));
-headingChanger(document.querySelector("#skills"));
-headingChanger(document.querySelector("#projects"));
-headingChanger(document.querySelector("#contact"));
+function init() {
+  headingChanger(document.querySelector("#home"));
+  headingChanger(document.querySelector("#skills"));
+  headingChanger(document.querySelector("#projects"));
+  headingChanger(document.querySelector("#contact"));
+}
+
+init();
