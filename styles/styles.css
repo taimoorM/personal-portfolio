@@ -556,12 +556,6 @@ section {
   background: rgb(121, 121, 121);
 }
 
-.contact {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
