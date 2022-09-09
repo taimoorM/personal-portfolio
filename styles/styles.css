@@ -461,6 +461,13 @@ section {
   color: #f71735;
   font-weight: 400;
 }
+@media (max-width: 1000px) {
+  .skills .aboutMe {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-right: 0;
+  }
+}
 .skills ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -497,6 +504,17 @@ section {
 }
 .skills i {
   font-size: 3rem;
+}
+@media (max-width: 1000px) {
+  .skills {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .projects {
