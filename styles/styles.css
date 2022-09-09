@@ -445,17 +445,14 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .skills .aboutMe {
-  margin-bottom: 50px;
+  margin-right: 50px;
   font-weight: 300;
+  width: 50%;
 }
 .skills .aboutMe p:not(:last-child) {
   margin-bottom: 20px;
@@ -661,9 +658,9 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 20;
   -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
           box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -774,11 +771,21 @@ section {
     left: 110%;
   }
 }
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
 .logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -789,7 +796,43 @@ section {
       -ms-flex-align: center;
           align-items: center;
   color: #f71735;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
+  z-index: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+.logo::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #399953;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dbe4ee), to(#1e1a34)), -webkit-gradient(linear, left top, left bottom, from(#dbe4ee), to(#1e1a34)), -webkit-gradient(linear, left top, left bottom, from(#f3a712), to(#f71735)), -webkit-gradient(linear, left top, left bottom, from(#f71735), to(#f3a712));
+  background-image: linear-gradient(#dbe4ee, #1e1a34), linear-gradient(#dbe4ee, #1e1a34), linear-gradient(#f3a712, #f71735), linear-gradient(#f71735, #f3a712);
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll) * -1s);
+          animation-delay: calc(var(--scroll) * -1s);
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: #1e1a34;
+  border-radius: 5px;
 }
 
 .nav {
@@ -837,17 +880,17 @@ section {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.nav a:hover {
+.nav a:hover, .nav a:focus, .nav a:active {
   color: #f3a712;
   background-color: rgba(255, 255, 255, 0.01);
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
 }
-.nav a:hover::after {
+.nav a:hover::after, .nav a:focus::after, .nav a:active::after {
   width: 5px;
 }
 @media (max-width: 500px) {
-  .nav a:hover::after {
+  .nav a:hover::after, .nav a:focus::after, .nav a:active::after {
     width: 0;
   }
 }
@@ -857,9 +900,7 @@ section {
 }
 
 .socialNav {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

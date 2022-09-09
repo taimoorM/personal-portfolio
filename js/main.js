@@ -22,6 +22,16 @@ function init() {
   headingChanger(document.querySelector("#skills"));
   headingChanger(document.querySelector("#projects"));
   headingChanger(document.querySelector("#contact"));
+  window.addEventListener(
+    "scroll",
+    () => {
+      document.body.style.setProperty(
+        "--scroll",
+        window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+      );
+    },
+    false
+  );
 }
 
 window.onload = function () {

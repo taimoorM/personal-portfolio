@@ -135,12 +135,13 @@ section {
 
 .skills {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  justify-content: space-between;
 
   .aboutMe {
-    margin-bottom: 50px;
+    margin-right: 50px;
     font-weight: 300;
+    width: 50%;
 
     p:not(:last-child) {
       margin-bottom: 20px;
