@@ -366,8 +366,8 @@ li {
 }
 
 .wrapper {
-  margin: 0 50px;
-  max-width: 1200px;
+  margin: 0 auto;
+  max-width: 1400px;
   width: 90%;
 }
 @media (max-width: 760px) {
@@ -377,25 +377,46 @@ li {
 }
 
 .sectionHeading {
-  margin-top: 30px;
-  position: fixed;
-  display: inline-block;
-  padding: 5px 20px;
-  border-bottom: 2px solid #f71735;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  margin-bottom: 50px;
 }
-.sectionHeading span {
-  font-size: 1.8rem;
-  font-family: "Source Sans Pro", sans-serif;
+.sectionHeading h2 {
+  font-size: 2.5rem;
+  color: #dbe4ee;
+  position: relative;
+  display: inline-block;
+  -webkit-animation: fadeInRight;
+          animation: fadeInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+.sectionHeading h2::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -30%;
+  height: 15px;
+  width: 100%;
+  -webkit-animation: fadeInLeft;
+          animation: fadeInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  background: rgb(247, 23, 53);
+  background: -webkit-gradient(linear, left top, right top, color-stop(52%, rgb(247, 23, 53)), to(rgb(243, 167, 18)));
+  background: linear-gradient(90deg, rgb(247, 23, 53) 52%, rgb(243, 167, 18) 100%);
+  z-index: -1;
+  border-radius: 3px;
 }
 
 section {
-  height: 100vh;
-  min-height: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 100px 0;
+}
+
+.home {
+  height: 100vh;
+  min-height: 600px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -448,17 +469,25 @@ section {
 }
 
 .skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .skills .aboutMe {
   margin-right: 50px;
   font-weight: 300;
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .skills .aboutMe p:not(:last-child) {
   margin-bottom: 20px;
@@ -466,6 +495,11 @@ section {
 .skills .aboutMe span {
   color: #f71735;
   font-weight: 400;
+}
+.skills .aboutMeWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 @media (max-width: 1000px) {
   .skills .aboutMe {
@@ -495,7 +529,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 200px;
+  height: 150px;
   position: relative;
   border: 1px solid;
   border-image-slice: 1;

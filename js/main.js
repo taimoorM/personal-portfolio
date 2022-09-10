@@ -18,7 +18,7 @@ const headingChanger = (el) => {
   observer.observe(el);
 };
 
-function addHoverText(el) {
+function addSpans(el) {
   const text = el.textContent.trim().split("");
   el.textContent = "";
   text.forEach((letter) => {
@@ -33,13 +33,11 @@ function addHoverText(el) {
   });
 }
 
-addHoverText(mainHeader);
-
 function init() {
-  headingChanger(document.querySelector("#home"));
-  headingChanger(document.querySelector("#skills"));
-  headingChanger(document.querySelector("#projects"));
-  headingChanger(document.querySelector("#contact"));
+  // headingChanger(document.querySelector("#home"));
+  // headingChanger(document.querySelector("#skills"));
+  // headingChanger(document.querySelector("#projects"));
+  // headingChanger(document.querySelector("#contact"));
   window.addEventListener(
     "scroll",
     () => {
@@ -50,6 +48,8 @@ function init() {
     },
     false
   );
+
+  addSpans(mainHeader);
 }
 
 window.onload = function () {
