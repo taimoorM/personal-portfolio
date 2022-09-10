@@ -401,17 +401,23 @@ section {
           align-items: center;
 }
 
-.homeInner h2 {
+.homeInner h1 {
   font-size: 3rem;
   margin-bottom: 5px;
 }
-.homeInner h2 > span {
-  font-weight: 500;
+.homeInner h1 span {
+  display: inline-block;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
-.homeInner h2 span:last-child {
+.homeInner h1 span:hover {
   color: #f71735;
+  -webkit-animation: swing;
+          animation: swing;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
-.homeInner h3 {
+.homeInner h2 {
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 1.7rem;

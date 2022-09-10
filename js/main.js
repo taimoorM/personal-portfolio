@@ -1,4 +1,5 @@
 const sectionHeading = document.querySelector("#sectionText");
+const mainHeader = document.querySelector(".mainHeading");
 
 const headingChanger = (el) => {
   const observer = new IntersectionObserver(
@@ -16,6 +17,23 @@ const headingChanger = (el) => {
 
   observer.observe(el);
 };
+
+function addHoverText(el) {
+  const text = el.textContent.trim().split("");
+  el.textContent = "";
+  text.forEach((letter) => {
+    if (letter !== " ") {
+      const span = document.createElement("span");
+      span.textContent = letter;
+      el.append(span);
+    } else {
+      br = document.createElement("br");
+      el.append(br);
+    }
+  });
+}
+
+addHoverText(mainHeader);
 
 function init() {
   headingChanger(document.querySelector("#home"));

@@ -88,19 +88,22 @@ section {
 }
 
 .homeInner {
-  h2 {
+  h1 {
     font-size: 3rem;
     margin-bottom: 5px;
 
-    & > span {
-      font-weight: 500;
-    }
-    span:last-child {
-      color: $imperial-red;
+    span {
+      display: inline-block;
+      transition: 0.3s all;
+      &:hover {
+        color: $imperial-red;
+        animation: swing;
+        animation-duration: 1s;
+      }
     }
   }
 
-  h3 {
+  h2 {
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 1.7rem;
