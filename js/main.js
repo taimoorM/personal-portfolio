@@ -34,10 +34,6 @@ function addSpans(el) {
 }
 
 function init() {
-  // headingChanger(document.querySelector("#home"));
-  // headingChanger(document.querySelector("#skills"));
-  // headingChanger(document.querySelector("#projects"));
-  // headingChanger(document.querySelector("#contact"));
   window.addEventListener(
     "scroll",
     () => {
@@ -50,6 +46,7 @@ function init() {
   );
 
   addSpans(mainHeader);
+  emailjs.init("pL8SFMP2vhPfXz36W");
 }
 
 window.onload = function () {
