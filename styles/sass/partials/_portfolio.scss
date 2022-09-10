@@ -57,8 +57,8 @@
 }
 
 .wrapper {
-  margin: 0 50px;
-  max-width: 1200px;
+  margin: 0 auto;
+  max-width: 1400px;
   width: 90%;
 
   @media (max-width: 760px) {
@@ -67,40 +67,84 @@
 }
 
 .sectionHeading {
-  margin-top: 30px;
-  position: fixed;
-  display: inline-block;
-  padding: 5px 20px;
-  border-bottom: 2px solid $imperial-red;
-  background-color: rgba(transparent, 0.2);
-  span {
-    font-size: 1.8rem;
-    font-family: $headingFont;
+  margin-bottom: 100px;
+  h2 {
+    font-size: 2.5rem;
+    font-family: $bodyFont;
+    color: $alice-blue;
+    position: relative;
+    display: inline-block;
+    animation: fadeInRight;
+    animation-duration: 1s;
+
+    &::first-letter {
+      color: $marigold;
+      font-family: $bodyFont;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      top: -25%;
+      height: 10px;
+      width: 100%;
+      animation: fadeInLeft;
+      animation-duration: 1s;
+      background: rgb(247, 23, 53);
+      background: linear-gradient(
+        90deg,
+        rgba(247, 23, 53, 1) 52%,
+        rgba(243, 167, 18, 1) 100%
+      );
+      z-index: -1;
+      border-radius: 3px;
+
+      @media (max-width: 500px) {
+        top: -30%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      font-size: 2rem;
+    }
   }
-  z-index: 10;
+  @media (max-width: 500px) {
+    margin-bottom: 50px;
+  }
 }
 
 section {
-  height: 100vh;
-  min-height: 900px;
   display: flex;
-  align-items: center;
+  padding: 100px 0;
+  min-height: 100vh;
+  @media (max-width: 500px) {
+    padding: 50 0px;
+  }
 }
 
+.home {
+  height: 100vh;
+  min-height: 600px;
+  align-items: center;
+}
 .homeInner {
-  h2 {
+  h1 {
     font-size: 3rem;
     margin-bottom: 5px;
 
-    & > span {
-      font-weight: 500;
-    }
-    span:last-child {
-      color: $imperial-red;
+    span {
+      display: inline-block;
+      transition: 0.3s all;
+      &:hover {
+        color: $imperial-red;
+        animation: swing;
+        animation-duration: 1s;
+      }
     }
   }
 
-  h3 {
+  h2 {
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 1.7rem;
@@ -134,13 +178,15 @@ section {
 }
 
 .skills {
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
   .aboutMe {
     margin-right: 50px;
     font-weight: 300;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     p:not(:last-child) {
       margin-bottom: 20px;
@@ -149,6 +195,13 @@ section {
     span {
       color: $imperial-red;
       font-weight: 400;
+    }
+
+    &Wrapper {
+      display: flex;
+      @media (max-width: 1000px) {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 1000px) {
@@ -172,7 +225,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 150px;
     position: relative;
     border: 1px solid;
     border-image-slice: 1;
@@ -196,6 +249,7 @@ section {
 
 .projects {
   justify-content: center;
+  flex-direction: column;
 
   .projectImage {
     img {
@@ -241,19 +295,6 @@ section {
     }
   }
 
-  .sliderEnd {
-    height: 420px;
-    width: 20px;
-    z-index: 100;
-  }
-
-  .sliderLeft {
-    box-shadow: 10px -4px 6px -1px rgb(0 0 0 / 60%);
-  }
-
-  .sliderRight {
-    box-shadow: -10px -4px 6px -1px rgb(0 0 0 / 60%);
-  }
   .main-carousel {
     width: 100%;
   }
@@ -268,13 +309,8 @@ section {
   background: rgb(121, 121, 121);
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.contact {
+  flex-direction: column;
 }
 
 .lds-ring {

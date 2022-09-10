@@ -1,4 +1,5 @@
 const sectionHeading = document.querySelector("#sectionText");
+const mainHeader = document.querySelector(".mainHeading");
 
 const headingChanger = (el) => {
   const observer = new IntersectionObserver(
@@ -17,11 +18,22 @@ const headingChanger = (el) => {
   observer.observe(el);
 };
 
+function addSpans(el) {
+  const text = el.textContent.trim().split("");
+  el.textContent = "";
+  text.forEach((letter) => {
+    if (letter !== " ") {
+      const span = document.createElement("span");
+      span.textContent = letter;
+      el.append(span);
+    } else {
+      br = document.createElement("br");
+      el.append(br);
+    }
+  });
+}
+
 function init() {
-  headingChanger(document.querySelector("#home"));
-  headingChanger(document.querySelector("#skills"));
-  headingChanger(document.querySelector("#projects"));
-  headingChanger(document.querySelector("#contact"));
   window.addEventListener(
     "scroll",
     () => {
@@ -32,6 +44,9 @@ function init() {
     },
     false
   );
+
+  addSpans(mainHeader);
+  emailjs.init("pL8SFMP2vhPfXz36W");
 }
 
 window.onload = function () {

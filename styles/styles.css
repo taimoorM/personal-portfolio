@@ -222,6 +222,101 @@ template {
   overflow: hidden;
 }
 
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  -webkit-transform: scaleX(1.45);
+          transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar:hover {
+  -webkit-transform: scaleY(1.3);
+          transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
+
 h1,
 h2,
 h3,
@@ -366,8 +461,8 @@ li {
 }
 
 .wrapper {
-  margin: 0 50px;
-  max-width: 1200px;
+  margin: 0 auto;
+  max-width: 1400px;
   width: 90%;
 }
 @media (max-width: 760px) {
@@ -377,41 +472,94 @@ li {
 }
 
 .sectionHeading {
-  margin-top: 30px;
-  position: fixed;
-  display: inline-block;
-  padding: 5px 20px;
-  border-bottom: 2px solid #f71735;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  margin-bottom: 100px;
 }
-.sectionHeading span {
-  font-size: 1.8rem;
-  font-family: "Source Sans Pro", sans-serif;
+.sectionHeading h2 {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #dbe4ee;
+  position: relative;
+  display: inline-block;
+  -webkit-animation: fadeInRight;
+          animation: fadeInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+.sectionHeading h2::first-letter {
+  color: #f3a712;
+  font-family: "Montserrat", sans-serif;
+}
+.sectionHeading h2::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -25%;
+  height: 10px;
+  width: 100%;
+  -webkit-animation: fadeInLeft;
+          animation: fadeInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  background: rgb(247, 23, 53);
+  background: -webkit-gradient(linear, left top, right top, color-stop(52%, rgb(247, 23, 53)), to(rgb(243, 167, 18)));
+  background: linear-gradient(90deg, rgb(247, 23, 53) 52%, rgb(243, 167, 18) 100%);
+  z-index: -1;
+  border-radius: 3px;
+}
+@media (max-width: 500px) {
+  .sectionHeading h2::after {
+    top: -30%;
+  }
+}
+@media (max-width: 500px) {
+  .sectionHeading h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .sectionHeading {
+    margin-bottom: 50px;
+  }
 }
 
 section {
-  height: 100vh;
-  min-height: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 100px 0;
+  min-height: 100vh;
+}
+@media (max-width: 500px) {
+  section {
+    padding: 50 0px;
+  }
+}
+
+.home {
+  height: 100vh;
+  min-height: 600px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.homeInner h2 {
+.homeInner h1 {
   font-size: 3rem;
   margin-bottom: 5px;
 }
-.homeInner h2 > span {
-  font-weight: 500;
+.homeInner h1 span {
+  display: inline-block;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
-.homeInner h2 span:last-child {
+.homeInner h1 span:hover {
   color: #f71735;
+  -webkit-animation: swing;
+          animation: swing;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
-.homeInner h3 {
+.homeInner h2 {
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 1.7rem;
@@ -442,17 +590,25 @@ section {
 }
 
 .skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .skills .aboutMe {
   margin-right: 50px;
   font-weight: 300;
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .skills .aboutMe p:not(:last-child) {
   margin-bottom: 20px;
@@ -460,6 +616,19 @@ section {
 .skills .aboutMe span {
   color: #f71735;
   font-weight: 400;
+}
+.skills .aboutMeWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 1000px) {
+  .skills .aboutMeWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 @media (max-width: 1000px) {
   .skills .aboutMe {
@@ -489,7 +658,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 200px;
+  height: 150px;
   position: relative;
   border: 1px solid;
   border-image-slice: 1;
@@ -521,6 +690,10 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .projects .projectImage img {
   border-top-left-radius: 5px;
@@ -558,19 +731,6 @@ section {
 .projects .projectIcons li {
   margin-right: 5px;
 }
-.projects .sliderEnd {
-  height: 420px;
-  width: 20px;
-  z-index: 100;
-}
-.projects .sliderLeft {
-  -webkit-box-shadow: 10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-          box-shadow: 10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-}
-.projects .sliderRight {
-  -webkit-box-shadow: -10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-          box-shadow: -10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-}
 .projects .main-carousel {
   width: 100%;
 }
@@ -584,23 +744,13 @@ section {
   background: rgb(121, 121, 121);
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.contact {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .lds-ring {
   display: none;
   position: relative;
@@ -962,13 +1112,9 @@ section {
 }
 .contactForm legend {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 50px;
-  font-weight: 300;
-}
-.contactForm .message {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 .contactForm input,
 .contactForm textarea {
