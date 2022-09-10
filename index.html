@@ -80,7 +80,7 @@
       </div>
       <div class="mainContent">
         <div class="wrapper">
-          <section class="home" id="home" data-heading="Hello">
+          <section class="home" id="home">
             <div class="homeInner">
               <h1 class="mainHeading animate__animated animate__fadeInDown">
                 I'm Taimoor Mohammad
@@ -113,9 +113,9 @@
               </ul>
             </div>
           </section>
-          <section class="skills" id="skills" data-heading="About Me">
+          <section class="skills" id="skills">
             <div class="sectionHeading">
-              <h2 id="sectionText">About Me</h2>
+              <h2>About Me</h2>
             </div>
             <div class="aboutMeWrapper">
               <div class="aboutMe">
@@ -179,8 +179,10 @@
               </ul>
             </div>
           </section>
-          <section class="projects" id="projects" data-heading="My Projects">
-            <div class="sliderEnd sliderLeft"></div>
+          <section class="projects" id="projects">
+            <div class="sectionHeading">
+              <h2>My Projects</h2>
+            </div>
             <ul
               class="main-carousel"
               data-flickity='{  "freeScroll": true, "cellAlign:": "left", "wrapAround": true, "prevNextButtons": false}'
@@ -302,13 +304,15 @@
                 </div>
               </li>
             </ul>
-            <div class="sliderEnd sliderRight"></div>
           </section>
-          <section class="contact" id="contact" data-heading="Contact Me">
+          <section class="contact" id="contact">
+            <div class="sectionHeading">
+              <h2>Contact Me</h2>
+            </div>
             <form class="contactForm" id="contactForm">
               <input type="hidden" name="contact_number" />
               <fieldset>
-                <legend>Get in touch</legend>
+                <legend>Your info:</legend>
                 <label for="name" class="sr-only">Your name</label>
                 <input
                   type="text"
@@ -327,7 +331,7 @@
                 />
               </fieldset>
               <fieldset>
-                <legend class="message">Your message</legend>
+                <legend class="message">Your message:</legend>
                 <label for="message" class="sr-only">Your message</label>
                 <textarea
                   name="message"

@@ -377,10 +377,11 @@ li {
 }
 
 .sectionHeading {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 .sectionHeading h2 {
   font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
   color: #dbe4ee;
   position: relative;
   display: inline-block;
@@ -389,12 +390,16 @@ li {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
 }
+.sectionHeading h2::first-letter {
+  color: #f3a712;
+  font-family: "Montserrat", sans-serif;
+}
 .sectionHeading h2::after {
   content: "";
   position: absolute;
   left: -10%;
-  top: -30%;
-  height: 15px;
+  top: -25%;
+  height: 10px;
   width: 100%;
   -webkit-animation: fadeInLeft;
           animation: fadeInLeft;
@@ -406,12 +411,32 @@ li {
   z-index: -1;
   border-radius: 3px;
 }
+@media (max-width: 500px) {
+  .sectionHeading h2::after {
+    top: -30%;
+  }
+}
+@media (max-width: 500px) {
+  .sectionHeading h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .sectionHeading {
+    margin-bottom: 50px;
+  }
+}
 
 section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 100px 0;
+}
+@media (max-width: 500px) {
+  section {
+    padding: 50 0px;
+  }
 }
 
 .home {
@@ -502,6 +527,14 @@ section {
   display: flex;
 }
 @media (max-width: 1000px) {
+  .skills .aboutMeWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 1000px) {
   .skills .aboutMe {
     width: 100%;
     margin-bottom: 50px;
@@ -561,6 +594,10 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .projects .projectImage img {
   border-top-left-radius: 5px;
@@ -598,19 +635,6 @@ section {
 .projects .projectIcons li {
   margin-right: 5px;
 }
-.projects .sliderEnd {
-  height: 420px;
-  width: 20px;
-  z-index: 100;
-}
-.projects .sliderLeft {
-  -webkit-box-shadow: 10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-          box-shadow: 10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-}
-.projects .sliderRight {
-  -webkit-box-shadow: -10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-          box-shadow: -10px -4px 6px -1px rgba(0, 0, 0, 0.6);
-}
 .projects .main-carousel {
   width: 100%;
 }
@@ -624,23 +648,13 @@ section {
   background: rgb(121, 121, 121);
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.contact {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .lds-ring {
   display: none;
   position: relative;
@@ -1002,13 +1016,9 @@ section {
 }
 .contactForm legend {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 50px;
-  font-weight: 300;
-}
-.contactForm .message {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 .contactForm input,
 .contactForm textarea {

@@ -67,21 +67,27 @@
 }
 
 .sectionHeading {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   h2 {
     font-size: 2.5rem;
+    font-family: $bodyFont;
     color: $alice-blue;
     position: relative;
     display: inline-block;
     animation: fadeInRight;
     animation-duration: 1s;
 
+    &::first-letter {
+      color: $marigold;
+      font-family: $bodyFont;
+    }
+
     &::after {
       content: "";
       position: absolute;
       left: -10%;
-      top: -30%;
-      height: 15px;
+      top: -25%;
+      height: 10px;
       width: 100%;
       animation: fadeInLeft;
       animation-duration: 1s;
@@ -93,13 +99,27 @@
       );
       z-index: -1;
       border-radius: 3px;
+
+      @media (max-width: 500px) {
+        top: -30%;
+      }
     }
+
+    @media (max-width: 500px) {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 500px) {
+    margin-bottom: 50px;
   }
 }
 
 section {
   display: flex;
   padding: 100px 0;
+  @media (max-width: 500px) {
+    padding: 50 0px;
+  }
 }
 
 .home {
@@ -178,6 +198,9 @@ section {
 
     &Wrapper {
       display: flex;
+      @media (max-width: 1000px) {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 1000px) {
@@ -225,6 +248,7 @@ section {
 
 .projects {
   justify-content: center;
+  flex-direction: column;
 
   .projectImage {
     img {
@@ -270,19 +294,6 @@ section {
     }
   }
 
-  .sliderEnd {
-    height: 420px;
-    width: 20px;
-    z-index: 100;
-  }
-
-  .sliderLeft {
-    box-shadow: 10px -4px 6px -1px rgb(0 0 0 / 60%);
-  }
-
-  .sliderRight {
-    box-shadow: -10px -4px 6px -1px rgb(0 0 0 / 60%);
-  }
   .main-carousel {
     width: 100%;
   }
@@ -297,13 +308,8 @@ section {
   background: rgb(121, 121, 121);
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.contact {
+  flex-direction: column;
 }
 
 .lds-ring {
