@@ -401,17 +401,17 @@ section {
           align-items: center;
 }
 
-.homeInner h1 {
+.homeInner h2 {
   font-size: 3rem;
   margin-bottom: 5px;
 }
-.homeInner h1 > span {
+.homeInner h2 > span {
   font-weight: 500;
 }
-.homeInner h1 span:last-child {
+.homeInner h2 span:last-child {
   color: #f71735;
 }
-.homeInner h2 {
+.homeInner h3 {
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 1.7rem;
@@ -816,7 +816,7 @@ section {
   color: #f71735;
   margin: 30px auto 0 auto;
   z-index: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   padding: 10px;
 }
