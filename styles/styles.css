@@ -560,10 +560,8 @@ section {
 }
 .homeInner h1 span:hover {
   color: #f71735;
-  -webkit-animation: swing;
-          animation: swing;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
 }
 .homeInner h2 {
   margin-bottom: 20px;

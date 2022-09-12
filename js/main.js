@@ -21,11 +21,16 @@ const headingChanger = (el) => {
 function addSpans(el) {
   const text = el.textContent.trim().split("");
   el.textContent = "";
+  let dur = 0.1;
   text.forEach((letter) => {
     if (letter !== " ") {
       const span = document.createElement("span");
+      span.classList.add("animate__animated", "animate__fadeInDownBig");
+      span.style.animationDelay = `${dur}s`;
       span.textContent = letter;
       el.append(span);
+
+      dur += 0.1;
     } else {
       br = document.createElement("br");
       el.append(br);

@@ -142,8 +142,7 @@ section {
       transition: 0.3s all;
       &:hover {
         color: $imperial-red;
-        animation: swing;
-        animation-duration: 1s;
+        transform: translateY(5px);
       }
     }
   }
