@@ -69,7 +69,7 @@
 .sectionHeading {
   margin-bottom: 100px;
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-family: $bodyFont;
     color: $alice-blue;
     position: relative;
@@ -106,7 +106,7 @@
     }
 
     @media (max-width: 500px) {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
   @media (max-width: 500px) {
@@ -130,8 +130,12 @@ section {
 }
 .homeInner {
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 5px;
+    line-height: 1;
+    @media (max-width: 500px) {
+      font-size: 2.5rem;
+    }
 
     span {
       display: inline-block;
@@ -149,6 +153,10 @@ section {
     font-weight: 400;
     font-size: 1.7rem;
     color: $imperial-red;
+
+    @media (max-width: 500px) {
+      font-size: 1.4rem;
+    }
   }
 
   p {

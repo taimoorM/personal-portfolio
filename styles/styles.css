@@ -475,7 +475,7 @@ li {
   margin-bottom: 100px;
 }
 .sectionHeading h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-family: "Montserrat", sans-serif;
   color: #dbe4ee;
   position: relative;
@@ -513,7 +513,7 @@ li {
 }
 @media (max-width: 500px) {
   .sectionHeading h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 500px) {
@@ -544,8 +544,14 @@ section {
 }
 
 .homeInner h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 5px;
+  line-height: 1;
+}
+@media (max-width: 500px) {
+  .homeInner h1 {
+    font-size: 2.5rem;
+  }
 }
 .homeInner h1 span {
   display: inline-block;
@@ -564,6 +570,11 @@ section {
   font-weight: 400;
   font-size: 1.7rem;
   color: #f71735;
+}
+@media (max-width: 500px) {
+  .homeInner h2 {
+    font-size: 1.4rem;
+  }
 }
 .homeInner p {
   color: #b7b6ba;
