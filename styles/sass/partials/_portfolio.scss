@@ -189,7 +189,7 @@ section {
 
   .aboutMe {
     margin-right: 50px;
-    font-weight: 300;
+    font-weight: 400;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -201,7 +201,7 @@ section {
 
     span {
       color: $imperial-red;
-      font-weight: 400;
+      font-weight: 700;
     }
 
     &Wrapper {
@@ -250,6 +250,7 @@ section {
   }
 
   li {
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;

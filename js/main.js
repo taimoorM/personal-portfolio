@@ -1,23 +1,23 @@
-const sectionHeadings = document.querySelectorAll(".sectionHeading h2");
-const mainHeader = document.querySelector(".mainHeading");
-
-const animateHeading = (el) => {
+const onScroll = (el, cb) => {
   const observer = new IntersectionObserver(
     function (entries) {
       if (entries[0].isIntersecting) {
-        el.style.opacity = "1";
-        el.classList.add("animate__animated", "animate__fadeInLeft");
+        cb();
       }
     },
-    { threshold: [0.8] }
+    { threshold: [0.7] }
   );
 
   observer.observe(el);
 };
 
 const addObserver = () => {
+  const sectionHeadings = document.querySelectorAll(".sectionHeading h2");
   sectionHeadings.forEach((heading) => {
-    animateHeading(heading);
+    onScroll(heading, () => {
+      heading.style.opacity = "1";
+      heading.classList.add("animate__animated", "animate__fadeInLeft");
+    });
   });
 };
 
@@ -41,6 +41,36 @@ function addSpans(el) {
   });
 }
 
+function animateGrid() {
+  const gridCells = document.querySelectorAll(".skillGrid li");
+  let delay = 0.1;
+  gridCells.forEach((cell) => {
+    onScroll(cell, () => {
+      cell.style.opacity = "1";
+      cell.classList.add("animate__animated", "animate__fadeInTopLeft");
+      cell.style.animationDelay = `${delay}s`;
+      delay += 0.1;
+    });
+  });
+}
+
+// function initMap() {
+//   // The location of Uluru
+//   const uluru = { lat: -25.344, lng: 131.031 };
+//   // The map, centered at Uluru
+//   const map = new google.maps.Map(document.getElementById("map"), {
+//     zoom: 4,
+//     center: uluru,
+//   });
+//   // The marker, positioned at Uluru
+//   const marker = new google.maps.Marker({
+//     position: uluru,
+//     map: map,
+//   });
+// }
+
+// window.initMap = initMap;
+
 function init() {
   window.addEventListener(
     "scroll",
@@ -52,9 +82,12 @@ function init() {
     },
     false
   );
-
+  const mainHeader = document.querySelector(".mainHeading");
   addSpans(mainHeader);
   addObserver();
+  const grid = document.querySelector(".skillGrid");
+  animateCSSGrid.wrapGrid(grid, { duration: 300 });
+  animateGrid();
   emailjs.init("pL8SFMP2vhPfXz36W");
 }
 
