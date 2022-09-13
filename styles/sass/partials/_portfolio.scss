@@ -74,8 +74,9 @@
     color: $alice-blue;
     position: relative;
     display: inline-block;
-    animation: fadeInRight;
-    animation-duration: 1s;
+    opacity: 0;
+    // animation: fadeInRight;
+    // animation-duration: 0.5s;
 
     &::first-letter {
       color: $marigold;
@@ -89,8 +90,8 @@
       top: -25%;
       height: 10px;
       width: 100%;
-      animation: fadeInLeft;
-      animation-duration: 1s;
+      animation: var(--animate, none);
+      // animation-duration: 1s;
       background: rgb(247, 23, 53);
       background: linear-gradient(
         90deg,

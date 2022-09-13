@@ -480,10 +480,7 @@ li {
   color: #dbe4ee;
   position: relative;
   display: inline-block;
-  -webkit-animation: fadeInRight;
-          animation: fadeInRight;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  opacity: 0;
 }
 .sectionHeading h2::first-letter {
   color: #f3a712;
@@ -496,10 +493,8 @@ li {
   top: -25%;
   height: 10px;
   width: 100%;
-  -webkit-animation: fadeInLeft;
-          animation: fadeInLeft;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation: var(--animate, none);
+          animation: var(--animate, none);
   background: rgb(247, 23, 53);
   background: -webkit-gradient(linear, left top, right top, color-stop(52%, rgb(247, 23, 53)), to(rgb(243, 167, 18)));
   background: linear-gradient(90deg, rgb(247, 23, 53) 52%, rgb(243, 167, 18) 100%);

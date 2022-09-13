@@ -1,36 +1,39 @@
-const sectionHeading = document.querySelector("#sectionText");
+const sectionHeadings = document.querySelectorAll(".sectionHeading h2");
 const mainHeader = document.querySelector(".mainHeading");
 
-const headingChanger = (el) => {
+const animateHeading = (el) => {
   const observer = new IntersectionObserver(
     function (entries) {
-      if (entries[0].isIntersecting === true) {
-        sectionHeading.textContent = el.dataset.heading;
-        sectionHeading.style.animationName = "fadeIn";
-        sectionHeading.style.animationDuration = "3s";
-      } else {
-        sectionHeading.style.animation = "none";
+      if (entries[0].isIntersecting) {
+        el.style.opacity = "1";
+        el.classList.add("animate__animated", "animate__fadeInLeft");
       }
     },
-    { threshold: [0.4] }
+    { threshold: [0.8] }
   );
 
   observer.observe(el);
 };
 
+const addObserver = () => {
+  sectionHeadings.forEach((heading) => {
+    animateHeading(heading);
+  });
+};
+
 function addSpans(el) {
   const text = el.textContent.trim().split("");
   el.textContent = "";
-  let dur = 0.1;
+  let delay = 0.1;
   text.forEach((letter) => {
     if (letter !== " ") {
       const span = document.createElement("span");
       span.classList.add("animate__animated", "animate__fadeIn");
-      span.style.animationDelay = `${dur}s`;
+      span.style.animationDelay = `${delay}s`;
       span.textContent = letter;
       el.append(span);
 
-      dur += 0.1;
+      delay += 0.1;
     } else {
       br = document.createElement("br");
       el.append(br);
@@ -51,6 +54,7 @@ function init() {
   );
 
   addSpans(mainHeader);
+  addObserver();
   emailjs.init("pL8SFMP2vhPfXz36W");
 }
 
