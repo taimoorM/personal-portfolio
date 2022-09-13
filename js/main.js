@@ -25,7 +25,7 @@ function addSpans(el) {
   text.forEach((letter) => {
     if (letter !== " ") {
       const span = document.createElement("span");
-      span.classList.add("animate__animated", "animate__fadeInDownBig");
+      span.classList.add("animate__animated", "animate__fadeIn");
       span.style.animationDelay = `${dur}s`;
       span.textContent = letter;
       el.append(span);

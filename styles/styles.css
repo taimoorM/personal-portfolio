@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Montserrat:wght@200;400&family=Source+Sans+Pro:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantora+One&family=Montserrat:wght@200;400&family=Source+Sans+Pro:wght@300;400;700;900&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -529,12 +529,6 @@ section {
   padding: 100px 0;
   min-height: 100vh;
 }
-@media (max-width: 500px) {
-  section {
-    padding: 50 0px;
-  }
-}
-
 .home {
   height: 100vh;
   min-height: 600px;
@@ -560,8 +554,6 @@ section {
 }
 .homeInner h1 span:hover {
   color: #f71735;
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
 }
 .homeInner h2 {
   margin-bottom: 20px;
@@ -642,19 +634,43 @@ section {
 @media (max-width: 1000px) {
   .skills .aboutMe {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     margin-right: 0;
   }
 }
-.skills ul {
+.skills .skillGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 100%;
+  width: 50%;
+  position: relative;
+}
+@media (max-width: 1000px) {
+  .skills .skillGrid {
+    width: 100%;
+  }
 }
 @media (max-width: 760px) {
-  .skills ul {
+  .skills .skillGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+.skills .skillGrid:before {
+  content: "Skill Set";
+  position: absolute;
+  top: -75px;
+  left: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 7rem;
+  color: #1e1a34;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #f71735;
+}
+@media (max-width: 760px) {
+  .skills .skillGrid:before {
+    font-size: 5rem;
+    top: -55px;
   }
 }
 .skills li {
@@ -669,11 +685,13 @@ section {
           align-items: center;
   height: 150px;
   position: relative;
-  border: 1px solid;
+  border: 2px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to left, #2b1a48, #41143d);
   -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
           box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 @media (max-width: 1000px) {
   .skills li {
