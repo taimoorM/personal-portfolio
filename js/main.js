@@ -62,22 +62,202 @@ function animateGrid() {
   });
 }
 
-// function initMap() {
-//   // The location of Uluru
-//   const uluru = { lat: -25.344, lng: 131.031 };
-//   // The map, centered at Uluru
-//   const map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 4,
-//     center: uluru,
-//   });
-//   // The marker, positioned at Uluru
-//   const marker = new google.maps.Marker({
-//     position: uluru,
-//     map: map,
-//   });
-// }
+function initMap() {
+  // The location of Uluru
+  const toronto = { lat: 43.65107, lng: -79.347015 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 9,
+    center: toronto,
+    disableDefaultUI: true,
+    backgroundColor: "transparent",
+    styles: [
+      {
+        featureType: "all",
+        elementType: "labels.text.fill",
+        stylers: [
+          {
+            saturation: 36,
+          },
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 40,
+          },
+        ],
+      },
+      {
+        featureType: "all",
+        elementType: "labels.text.stroke",
+        stylers: [
+          {
+            visibility: "on",
+          },
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 16,
+          },
+        ],
+      },
+      {
+        featureType: "all",
+        elementType: "labels.icon",
+        stylers: [
+          {
+            visibility: "off",
+          },
+        ],
+      },
+      {
+        featureType: "administrative",
+        elementType: "geometry.fill",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 20,
+          },
+        ],
+      },
+      {
+        featureType: "administrative",
+        elementType: "geometry.stroke",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 17,
+          },
+          {
+            weight: 1.2,
+          },
+        ],
+      },
+      {
+        featureType: "landscape",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 20,
+          },
+        ],
+      },
+      {
+        featureType: "poi",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 21,
+          },
+        ],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry.fill",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 17,
+          },
+        ],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry.stroke",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 29,
+          },
+          {
+            weight: 0.2,
+          },
+        ],
+      },
+      {
+        featureType: "road.arterial",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 18,
+          },
+        ],
+      },
+      {
+        featureType: "road.local",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 16,
+          },
+        ],
+      },
+      {
+        featureType: "transit",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 19,
+          },
+        ],
+      },
+      {
+        featureType: "water",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#000000",
+          },
+          {
+            lightness: 17,
+          },
+        ],
+      },
+    ],
+  });
+  // The marker, positioned at Uluru
+  const svgMarker = {
+    path: "M10.453 14.016l6.563-6.609-1.406-1.406-5.156 5.203-2.063-2.109-1.406 1.406zM12 2.016q2.906 0 4.945 2.039t2.039 4.945q0 1.453-0.727 3.328t-1.758 3.516-2.039 3.070-1.711 2.273l-0.75 0.797q-0.281-0.328-0.75-0.867t-1.688-2.156-2.133-3.141-1.664-3.445-0.75-3.375q0-2.906 2.039-4.945t4.945-2.039z",
+    fillColor: "#f71735ff",
+    fillOpacity: 1,
+    strokeWeight: 0,
+    rotation: 0,
+    scale: 2,
+    anchor: new google.maps.Point(15, 30),
+  };
 
-// window.initMap = initMap;
+  new google.maps.Marker({
+    position: map.getCenter(),
+    icon: svgMarker,
+    map: map,
+  });
+}
+
+window.initMap = initMap;
 
 function init() {
   window.addEventListener(

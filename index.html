@@ -312,48 +312,50 @@
             <div class="sectionHeading">
               <h2>Contact Me</h2>
             </div>
-            <form class="contactForm" id="contactForm">
-              <input type="hidden" name="contact_number" />
-              <fieldset>
-                <legend>Your info:</legend>
-                <label for="name" class="sr-only">Your name</label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Your name"
-                  name="user_name"
-                  required
-                />
-                <label for="email" class="sr-only">Your email</label>
-                <input
-                  type="email"
-                  id="name"
-                  placeholder="Your email"
-                  name="user_email"
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <legend class="message">Your message:</legend>
-                <label for="message" class="sr-only">Your message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="How can I help?"
-                  required
-                ></textarea>
-              </fieldset>
-              <button class="button" id="formButton">
-                <div class="lds-ring">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
-                <span>Submit</span>
-              </button>
-            </form>
-            <div id="map"></div>
+            <div class="contactWrapper">
+              <form class="contactForm" id="contactForm">
+                <input type="hidden" name="contact_number" />
+                <fieldset>
+                  <legend>Your info:</legend>
+                  <label for="name" class="sr-only">Your name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your name"
+                    name="user_name"
+                    required
+                  />
+                  <label for="email" class="sr-only">Your email</label>
+                  <input
+                    type="email"
+                    id="name"
+                    placeholder="Your email"
+                    name="user_email"
+                    required
+                  />
+                </fieldset>
+                <fieldset>
+                  <legend class="message">Your message:</legend>
+                  <label for="message" class="sr-only">Your message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="How can I help?"
+                    required
+                  ></textarea>
+                </fieldset>
+                <button class="button" id="formButton">
+                  <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <span>Submit</span>
+                </button>
+              </form>
+              <div id="map"></div>
+            </div>
           </section>
         </div>
       </div>
@@ -366,5 +368,9 @@
     ></script>
     <script src="https://unpkg.com/animate-css-grid@latest"></script>
     <script src="/js/main.js"></script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQzgHI4-1Ol1WBhs0npGemAkXnHA0WfC0&callback=initMap"
+    ></script>
   </body>
 </html>
