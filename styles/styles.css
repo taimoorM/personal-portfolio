@@ -683,6 +683,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 .contactWrapper {
   display: -webkit-box;
@@ -691,18 +692,102 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-right: 30px;
+}
+@media (max-width: 760px) {
+  .contactWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.contact .contactForm {
+  width: 50%;
+}
+@media (max-width: 760px) {
+  .contact .contactForm {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+.contact .mapContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 760px) {
+  .contact .mapContainer {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 500px;
+  }
+}
+@media (max-width: 500px) {
+  .contact .mapContainer {
+    height: 350px;
+  }
+}
+.contact .mapIconsBox {
+  background-color: rgba(4, 3, 15, 0.6);
+  padding: 30px;
+  width: 70%;
+  z-index: 200;
+}
+.contact .mapIconsBox ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.contact .mapIconsBox ul li:not(:last-child) {
+  margin-right: 20px;
+}
+.contact .mapIconsBox ul i {
+  font-size: 3rem;
+  color: #f3a712;
+}
+@media (max-width: 1000px) {
+  .contact .mapIconsBox ul i {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .contact .mapIconsBox ul i {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .contact .mapIconsBox {
+    padding: 20px;
+  }
 }
 .contact #map {
-  width: 500px;
-  height: 500px;
-  border: 5px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to left, #2b1a48, #41143d);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
   -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
           box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  opacity: 0.6;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  opacity: 0.2;
 }
 
 .lds-ring {
