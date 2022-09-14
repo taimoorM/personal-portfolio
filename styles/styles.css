@@ -524,6 +524,12 @@ section {
   padding: 100px 0;
   min-height: 100vh;
 }
+@media (max-width: 500px) {
+  section {
+    padding: 50 0px;
+  }
+}
+
 .home {
   height: 100vh;
   min-height: 600px;

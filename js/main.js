@@ -1,11 +1,11 @@
-const onScroll = (el, cb) => {
+const onScroll = (el, cb, threshold) => {
   const observer = new IntersectionObserver(
     function (entries) {
       if (entries[0].isIntersecting) {
         cb();
       }
     },
-    { threshold: [0.7] }
+    { threshold: [threshold] }
   );
 
   observer.observe(el);
@@ -14,10 +14,14 @@ const onScroll = (el, cb) => {
 const addObserver = () => {
   const sectionHeadings = document.querySelectorAll(".sectionHeading h2");
   sectionHeadings.forEach((heading) => {
-    onScroll(heading, () => {
-      heading.style.opacity = "1";
-      heading.classList.add("animate__animated", "animate__fadeInLeft");
-    });
+    onScroll(
+      heading,
+      () => {
+        heading.style.opacity = "1";
+        heading.classList.add("animate__animated", "animate__fadeInLeft");
+      },
+      0.3
+    );
   });
 };
 
@@ -45,12 +49,16 @@ function animateGrid() {
   const gridCells = document.querySelectorAll(".skillGrid li");
   let delay = 0.1;
   gridCells.forEach((cell) => {
-    onScroll(cell, () => {
-      cell.style.opacity = "1";
-      cell.classList.add("animate__animated", "animate__fadeInTopLeft");
-      cell.style.animationDelay = `${delay}s`;
-      delay += 0.1;
-    });
+    onScroll(
+      cell,
+      () => {
+        cell.style.opacity = "1";
+        cell.classList.add("animate__animated", "animate__fadeInUp");
+        cell.style.animationDelay = `${delay}s`;
+        delay += 0.1;
+      },
+      0.1
+    );
   });
 }
 
