@@ -443,22 +443,23 @@ section {
           align-items: center;
 }
 
-.homeInner h1 {
+.homeInner .mainHeading {
+  display: none;
   font-size: 3.5rem;
   margin-bottom: 5px;
   line-height: 1;
 }
 @media (max-width: 500px) {
-  .homeInner h1 {
+  .homeInner .mainHeading {
     font-size: 2.5rem;
   }
 }
-.homeInner h1 span {
+.homeInner .mainHeading span {
   display: inline-block;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
-.homeInner h1 span:hover {
+.homeInner .mainHeading span:hover {
   color: #f71735;
 }
 .homeInner h2 {
@@ -700,6 +701,7 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-right: 0;
   }
 }
 .contact .contactForm {

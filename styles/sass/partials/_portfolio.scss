@@ -130,7 +130,8 @@ section {
   align-items: center;
 }
 .homeInner {
-  h1 {
+  .mainHeading {
+    display: none;
     font-size: 3.5rem;
     margin-bottom: 5px;
     line-height: 1;
@@ -352,14 +353,20 @@ section {
 
     @media (max-width: 760px) {
       flex-direction: column;
+      padding-right: 0;
     }
   }
 
   .contactForm {
     width: 50%;
+
     @media (max-width: 760px) {
       width: 100%;
       margin-bottom: 50px;
+    }
+
+    @media (max-width: 500px) {
+      // margin-bottom: 0;
     }
   }
 

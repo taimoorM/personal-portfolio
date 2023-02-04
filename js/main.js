@@ -367,6 +367,7 @@ function init() {
     false
   );
   const mainHeader = document.querySelector(".mainHeading");
+  mainHeader.style.display = "block";
   addSpans(mainHeader);
   addObserver();
   const grid = document.querySelector(".skillGrid");
