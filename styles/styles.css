@@ -435,6 +435,10 @@ section {
   }
 }
 
+.mobileNav {
+  display: none;
+}
+
 .home {
   height: 100vh;
   min-height: 600px;
@@ -894,55 +898,6 @@ section {
 }
 @media (max-width: 500px) {
   .sidebar {
-    width: 100vw;
-    height: 100px;
-    min-height: auto;
-    position: fixed;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  .sidebar::after {
-    -webkit-animation: swipe 10s 0s infinite;
-            animation: swipe 10s 0s infinite;
-    height: 1px;
-    width: 15vw;
-    top: 0;
-    left: -100%;
-    right: auto;
-    background: -webkit-gradient(linear, left top, right top, from(transparent), to(#f71735));
-    background: linear-gradient(to right, transparent 0%, #f71735 100%);
-  }
-  .sidebar .nav ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 90%;
-  }
-  .sidebar .nav ul li {
-    margin: 0;
-  }
-  .sidebar .logo {
-    display: none;
-  }
-  .sidebar .socialNav {
     display: none;
   }
 }
