@@ -127,6 +127,12 @@ section {
 .mobileNav {
   display: none;
 }
+
+.navBars {
+  display: none;
+  @media (max-width: 500px) {
+  }
+}
 .home {
   height: 100vh;
   min-height: 600px;

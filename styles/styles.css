@@ -439,6 +439,9 @@ section {
   display: none;
 }
 
+.navBars {
+  display: none;
+}
 .home {
   height: 100vh;
   min-height: 600px;
