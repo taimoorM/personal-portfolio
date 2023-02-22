@@ -366,6 +366,15 @@ function init() {
     },
     false
   );
+  const mobileNav = document.querySelector(".mobileNav");
+  console.log(mobileNav);
+  const burger = document.querySelector(".burgerContainer");
+  console.log(burger);
+  burger.addEventListener("click", function () {
+    console.log("clicked!");
+    mobileNav.classList.toggle("menu-opened");
+  });
+
   const mainHeader = document.querySelector(".mainHeading");
   mainHeader.style.display = "block";
   addSpans(mainHeader);
