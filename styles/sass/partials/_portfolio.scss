@@ -145,6 +145,24 @@ section {
     transform: rotate(0deg);
     transition: all 0.3s $cubic;
     user-select: none;
+    z-index: 100;
+
+    &.open {
+      transform: rotate(90deg);
+
+      .burger {
+        .bar {
+          transition: all 0.4s $cubic;
+          transition-delay: 0.2s;
+          &.topBar {
+            transform: translateY(4px) rotate(45deg);
+          }
+          &.btmBar {
+            transform: translateY(3px) rotate(-45deg);
+          }
+        }
+      }
+    }
   }
 
   .burger {
@@ -181,7 +199,9 @@ section {
 
 .navContainer {
   position: absolute;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
   height: 0;
@@ -189,14 +209,16 @@ section {
   overflow: hidden;
   transition: all 0.5s ease-out, background 1s ease-out;
   transition-delay: 0.2s;
+  border-radius: 10px;
 
   ul {
     position: relative;
     display: block;
     padding: 0px 48px 0;
     list-style: none;
+    width: 100%;
     li {
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid $marigold;
       margin-top: 5px;
       transform: scale(1.15) translateY(-30px);
       opacity: 0;
@@ -221,24 +243,10 @@ section {
   }
   &.menuOpened {
     height: 100vh;
-    background-color: #000;
+    background-color: $darkBlue;
     transition: all 0.3s ease-in, background 0.5s ease-in;
     transition-delay: 0.25s;
-    .burgerContainer {
-      transform: rotate(90deg);
-      .burger {
-        .bar {
-          transition: all 0.4s $cubic;
-          transition-delay: 0.2s;
-          &.topBar {
-            transform: translateY(4px) rotate(45deg);
-          }
-          &.btmBar {
-            transform: translateY(3px) rotate(-45deg);
-          }
-        }
-      }
-    }
+
     ul {
       li {
         transform: scale(1) translateY(0px);

@@ -367,11 +367,16 @@ function init() {
     false
   );
   const mobileNav = document.querySelector(".navContainer");
-  console.log(mobileNav);
+  const navUl = document.querySelector(".navContainer ul");
   const burger = document.querySelector(".burgerContainer");
-  console.log(burger);
+
   burger.addEventListener("click", function () {
-    console.log("click!");
+    burger.classList.toggle("open");
+    mobileNav.classList.toggle("menuOpened");
+  });
+
+  navUl.addEventListener("click", function () {
+    burger.classList.toggle("open");
     mobileNav.classList.toggle("menuOpened");
   });
 

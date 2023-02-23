@@ -464,6 +464,25 @@ section {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: 100;
+}
+.mobileNav .burgerContainer.open {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.mobileNav .burgerContainer.open .burger .bar {
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.mobileNav .burgerContainer.open .burger .bar.topBar {
+  -webkit-transform: translateY(4px) rotate(45deg);
+          transform: translateY(4px) rotate(45deg);
+}
+.mobileNav .burgerContainer.open .burger .bar.btmBar {
+  -webkit-transform: translateY(3px) rotate(-45deg);
+          transform: translateY(3px) rotate(-45deg);
 }
 .mobileNav .burger {
   width: 20px;
@@ -506,7 +525,15 @@ section {
 
 .navContainer {
   position: absolute;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: 0;
   left: 0;
   height: 0;
@@ -516,15 +543,17 @@ section {
   transition: all 0.5s ease-out, background 1s ease-out;
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
+  border-radius: 10px;
 }
 .navContainer ul {
   position: relative;
   display: block;
   padding: 0px 48px 0;
   list-style: none;
+  width: 100%;
 }
 .navContainer ul li {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #f3a712;
   margin-top: 5px;
   -webkit-transform: scale(1.15) translateY(-30px);
           transform: scale(1.15) translateY(-30px);
@@ -563,29 +592,11 @@ section {
 }
 .navContainer.menuOpened {
   height: 100vh;
-  background-color: #000;
+  background-color: #1e1a34;
   -webkit-transition: all 0.3s ease-in, background 0.5s ease-in;
   transition: all 0.3s ease-in, background 0.5s ease-in;
   -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
-}
-.navContainer.menuOpened .burgerContainer {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-.navContainer.menuOpened .burgerContainer .burger .bar {
-  -webkit-transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-}
-.navContainer.menuOpened .burgerContainer .burger .bar.topBar {
-  -webkit-transform: translateY(4px) rotate(45deg);
-          transform: translateY(4px) rotate(45deg);
-}
-.navContainer.menuOpened .burgerContainer .burger .bar.btmBar {
-  -webkit-transform: translateY(3px) rotate(-45deg);
-          transform: translateY(3px) rotate(-45deg);
 }
 .navContainer.menuOpened ul li {
   -webkit-transform: scale(1) translateY(0px);
