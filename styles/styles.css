@@ -449,11 +449,6 @@ section {
       -ms-flex-align: center;
           align-items: center;
   z-index: 100;
-  overflow: hidden;
-  -webkit-transition: all 0.5s ease-out, background 1s ease-out;
-  transition: all 0.5s ease-out, background 1s ease-out;
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
 }
 .mobileNav .burgerContainer {
   position: relative;
@@ -501,13 +496,34 @@ section {
   margin: 0;
   width: auto;
 }
-.mobileNav ul {
+@media (max-width: 500px) {
+  .mobileNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.navContainer {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-out, background 1s ease-out;
+  transition: all 0.5s ease-out, background 1s ease-out;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.navContainer ul {
   position: relative;
   display: block;
   padding: 0px 48px 0;
   list-style: none;
 }
-.mobileNav ul li {
+.navContainer ul li {
   border-bottom: 1px solid #333;
   margin-top: 5px;
   -webkit-transform: scale(1.15) translateY(-30px);
@@ -518,23 +534,23 @@ section {
   transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 }
-.mobileNav ul li:nth-child(1) {
+.navContainer ul li:nth-child(1) {
   -webkit-transition-delay: 0.49s;
           transition-delay: 0.49s;
 }
-.mobileNav ul li:nth-child(2) {
+.navContainer ul li:nth-child(2) {
   -webkit-transition-delay: 0.42s;
           transition-delay: 0.42s;
 }
-.mobileNav ul li:nth-child(3) {
+.navContainer ul li:nth-child(3) {
   -webkit-transition-delay: 0.35s;
           transition-delay: 0.35s;
 }
-.mobileNav ul li:nth-child(4) {
+.navContainer ul li:nth-child(4) {
   -webkit-transition-delay: 0.28s;
           transition-delay: 0.28s;
 }
-.mobileNav ul li a {
+.navContainer ul li a {
   display: block;
   position: relative;
   color: #fff;
@@ -545,59 +561,52 @@ section {
   font-weight: 200;
   width: 100%;
 }
-.mobileNav.menu-opened {
-  height: 100%;
+.navContainer.menuOpened {
+  height: 100vh;
   background-color: #000;
   -webkit-transition: all 0.3s ease-in, background 0.5s ease-in;
   transition: all 0.3s ease-in, background 0.5s ease-in;
   -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
 }
-.mobileNav.menu-opened .burgerContainer {
+.navContainer.menuOpened .burgerContainer {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.mobileNav.menu-opened .burgerContainer .burger .bar {
+.navContainer.menuOpened .burgerContainer .burger .bar {
   -webkit-transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   -webkit-transition-delay: 0.2s;
           transition-delay: 0.2s;
 }
-.mobileNav.menu-opened .burgerContainer .burger .bar.topBar {
+.navContainer.menuOpened .burgerContainer .burger .bar.topBar {
   -webkit-transform: translateY(4px) rotate(45deg);
           transform: translateY(4px) rotate(45deg);
 }
-.mobileNav.menu-opened .burgerContainer .burger .bar.btmBar {
+.navContainer.menuOpened .burgerContainer .burger .bar.btmBar {
   -webkit-transform: translateY(3px) rotate(-45deg);
           transform: translateY(3px) rotate(-45deg);
 }
-.mobileNav.menu-opened ul li {
+.navContainer.menuOpened ul li {
   -webkit-transform: scale(1) translateY(0px);
           transform: scale(1) translateY(0px);
   opacity: 1;
 }
-.mobileNav.menu-opened ul li:nth-child(1) {
+.navContainer.menuOpened ul li:nth-child(1) {
   -webkit-transition-delay: 0.27s;
           transition-delay: 0.27s;
 }
-.mobileNav.menu-opened ul li:nth-child(2) {
+.navContainer.menuOpened ul li:nth-child(2) {
   -webkit-transition-delay: 0.34s;
           transition-delay: 0.34s;
 }
-.mobileNav.menu-opened ul li:nth-child(3) {
+.navContainer.menuOpened ul li:nth-child(3) {
   -webkit-transition-delay: 0.41s;
           transition-delay: 0.41s;
 }
-.mobileNav.menu-opened ul li:nth-child(4) {
+.navContainer.menuOpened ul li:nth-child(4) {
   -webkit-transition-delay: 0.48s;
           transition-delay: 0.48s;
-}
-@media (max-width: 500px) {
-  .mobileNav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 .home {

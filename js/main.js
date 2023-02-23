@@ -366,13 +366,13 @@ function init() {
     },
     false
   );
-  const mobileNav = document.querySelector(".mobileNav");
+  const mobileNav = document.querySelector(".navContainer");
   console.log(mobileNav);
   const burger = document.querySelector(".burgerContainer");
   console.log(burger);
   burger.addEventListener("click", function () {
-    console.log("clicked!");
-    mobileNav.classList.toggle("menu-opened");
+    console.log("click!");
+    mobileNav.classList.toggle("menuOpened");
   });
 
   const mainHeader = document.querySelector(".mainHeading");

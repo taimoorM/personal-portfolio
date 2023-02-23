@@ -135,9 +135,6 @@ section {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  overflow: hidden;
-  transition: all 0.5s ease-out, background 1s ease-out;
-  transition-delay: 0.2s;
 
   .burgerContainer {
     position: relative;
@@ -177,6 +174,21 @@ section {
     margin: 0;
     width: auto;
   }
+  @media (max-width: 500px) {
+    display: flex;
+  }
+}
+
+.navContainer {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease-out, background 1s ease-out;
+  transition-delay: 0.2s;
 
   ul {
     position: relative;
@@ -207,8 +219,8 @@ section {
       }
     }
   }
-  &.menu-opened {
-    height: 100%;
+  &.menuOpened {
+    height: 100vh;
     background-color: #000;
     transition: all 0.3s ease-in, background 0.5s ease-in;
     transition-delay: 0.25s;
@@ -238,9 +250,6 @@ section {
         }
       }
     }
-  }
-  @media (max-width: 500px) {
-    display: flex;
   }
 }
 
