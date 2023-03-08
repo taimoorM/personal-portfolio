@@ -726,7 +726,7 @@ section {
 @media (max-width: 1000px) {
   .skills .aboutMe {
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
     margin-right: 0;
   }
 }
@@ -750,19 +750,23 @@ section {
 .skills .skillGrid:before {
   content: "Skill Set";
   position: absolute;
-  top: -75px;
+  top: -110px;
   left: 0;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 7rem;
+  font-size: 5rem;
   color: #1e1a34;
   font-weight: 900;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px #f71735;
+  white-space: nowrap;
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #41143d, #2b1a48);
 }
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
   .skills .skillGrid:before {
-    font-size: 5rem;
-    top: -55px;
+    font-size: 4rem;
+    top: -95px;
   }
 }
 .skills li {
