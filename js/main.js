@@ -370,9 +370,6 @@ function init() {
   mainHeader.style.display = "block";
   addSpans(mainHeader);
   addObserver();
-  const grid = document.querySelector(".skillGrid");
-  animateCSSGrid.wrapGrid(grid, { duration: 300 });
-  animateGrid();
   emailjs.init("pL8SFMP2vhPfXz36W");
 }
 
